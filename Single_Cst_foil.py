@@ -1,5 +1,4 @@
 import numpy as np
-from matplotlib import pyplot
 from scipy.special import comb
 import tkinter as tk
 
@@ -28,7 +27,7 @@ class Cst_foils:
     
     def camber(self,m,p):
         for i in range(len(self.x)):
-            if self.x[i] >= p:
+            if self.x[i] > p:
                 try:
                     self.y[i] += (m/p**2)*(2*p*self.x[i]-self.x[i]**2)
                 except:
@@ -147,6 +146,7 @@ tk.Label(dat_frame, text="Airfoil Coordinates (text delimited)").grid(row=0, col
 dat_output = tk.Text(dat_frame, width=50, height=30)
 dat_output.grid(row=1, column=0, columnspan=2, padx=5, pady=0)
 root.mainloop()
+
 
 
 
